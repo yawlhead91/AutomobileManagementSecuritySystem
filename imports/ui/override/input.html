@@ -1,0 +1,18 @@
+<template name="override-atTextInput">
+  <div class="row">
+    <div class="at-input input-field col s12">
+      {{#if showLabels}}
+        <label for="at-field-{{_id}}">
+          {{displayName}} {{#unless required}}{{optionalText}}{{/unless}}
+        </label>
+      {{/if}}
+      <input class="validate {{#if hasError}}invalid{{/if}} {{#if hasSuccess}}valid{{/if}}" type="{{type}}" id="at-field-{{_id}}" name="at-field-{{_id}}" placeholder="{{#unless showLabels}} {{placeholder}} {{/unless}}" autocapitalize="none">
+      {{#if hasIcon}}
+          <span class="{{iconClass}}"></span>
+      {{/if}}
+      {{#if hasError}}
+        <span class='red-text'>{{errorText}}</span>
+      {{/if}}
+    </div>
+  </div>
+</template>
