@@ -1,10 +1,9 @@
 <template name="DashboardMain">
-<ul id="slide-out" class="side-nav fixed">
-	<li><a href="#!"><i class="material-icons">gps_not_fixed</i>Car One</a></li>
-	<li><a href="#!"><i class="material-icons">gps_not_fixed</i>Car Two</a></li>
-</ul>
-<div class="row">
-	<div class="col s12">
+{{>Sidebar}}
+<div class="row dashboardMain">
+	<div class="col s12 m12">
+		{{>Activity}}
 	</div>
+	{{>Map}}
 </div>
 </template>

@@ -5,6 +5,7 @@
 $orbitron: 'Orbitron', sans-serif;
 $blue: #0071b9;
 $grey: rgb(68, 67, 73);
+$dark-grey: #3D3C42;
 
 
 @mixin pattern-bg {
@@ -85,11 +86,12 @@ nav{
 }
 
 .brand-logo{
-	padding: 0 83px !important;
+	padding: 0 58px !important;
+	width: 250px;
 	background: #005B93;
 	font-family: $orbitron;
 
-	&:hover{
+	&:hover, &:focus{
 		text-decoration: none;
 	}
 }
@@ -100,19 +102,76 @@ nav{
 
 .side-nav{
 	top: 64px;
+	width: 250px;
 	background: $grey;
 	a{
 		color: white !important;
 	}
 
 	li{
+		&:nth-child(1){
+			line-height: normal
+		}
+
+		&:nth-child(even){
+			background: $dark-grey
+		}
 		a{
-			
+			&:hover, &:focus{
+				text-decoration: none;
+			}
+
 			font-size: 1rem;
 			i{
 				margin-right: 15px !important;
 				color: $blue !important;
 			}
+
+			span.badge{
+				position: absolute;
+				background-color: inherit;
+				&:hover{
+					background-color: inherit;
+				}
+			}
 		}
 	}
 }
+
+.dashboardMain{
+	padding: 15px 0 0 250px;
+
+}
+
+.head-board{
+	h4{
+		font-family: $orbitron;
+		padding: 20px 20px 20px 20px;
+		margin: 0;
+	}
+}
+
+
+.collection{
+	img{
+
+	}
+}
+
+.map-container {
+  width: 100%;
+  max-width: 100%;
+  height: 400px;
+}
+
+.header-icons {
+	padding: 10px 10px;
+	height: 100%;
+	cursor: pointer;
+
+	&:hover {
+		background: teal
+	}
+}
+
+	
