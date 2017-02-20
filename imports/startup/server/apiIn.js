@@ -28,9 +28,16 @@ Meteor.startup(() => {
             authRequired: true
         }, {
             post: function() {
+                console.log(this.request.headers)
                 var id = this.request.headers['x-user-id'];
-                if (id) {
-                    Meteor.call('insertActivity', "123", "34", "/path/test");
+                var lat = parseFloat(this.request.headers['lat']);
+                var long = parseFloat(this.request.headers['long']);
+                var image = this.request.headers['image'];
+
+
+
+                if (id && long && lat && image) {
+                    Meteor.call('insertActivity',  id, long, lat, image);
                     return {
                     	status: "successfull",
                     	message: "POST Successfull"

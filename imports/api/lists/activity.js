@@ -13,9 +13,11 @@ ActivitySchema = new SimpleSchema({
 	},
 	long: {
 		type: Number,
+		decimal: true
 	},
 	lat: {
 		type: Number,
+		decimal: true
 	},
 	imagepath: {
 		type: String
@@ -39,11 +41,12 @@ Activity.allow({
 });
 
 Meteor.methods({
-	insertActivity: function(userId, cords, image){
+	insertActivity: function(userId, long, lat, image){
 		Activity.insert({
 			date: new Date(),
 			userId: userId,
-			cords: cords,
+			long: long,
+			lat: lat,
 			imagepath: image
 		})
 	}
