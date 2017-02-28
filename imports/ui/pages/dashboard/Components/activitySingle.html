@@ -1,0 +1,14 @@
+<template name="ActivitySingle">
+<li class="collection-item avatar">
+	<img src="/Images/faceone.jpg" alt="" class="circle">
+	<span class="title">{{date}}</span>
+	<p>{{enDis}}<br>
+		Location: {{location}}
+	</p>
+	{{#if isDes}}
+		<a href="#!" class="secondary-content"><i class="material-icons">thumb_up</i></a>
+	{{else}}
+	    <a href="#!" class="secondary-content"><i class="material-icons  red-text text-lighten-2">thumb_down</i></a>
+	{{/if}}
+</li>
+</template>

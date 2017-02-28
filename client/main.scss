@@ -12,6 +12,12 @@ $dark-grey: #3D3C42;
 	background-image: url(/Images/stardust.png); 
 }
 
+a{
+	&:hover {
+		text-decoration: none;
+	}
+}
+
 .landing-body{
 	@include pattern-bg;
 	color: #fffff;
@@ -145,12 +151,22 @@ nav{
 
 .head-board{
 	h4{
-		font-family: $orbitron;
+		font-family: $orbitron !important;
 		padding: 20px 20px 20px 20px;
 		margin: 0;
 	}
 }
 
+
+.modal-activity{
+	h4{
+		font-family: $orbitron !important;
+		padding: 5px;
+		margin: 0;
+	}
+
+	text-align: center;
+}
 
 .collection{
 	img{
@@ -174,4 +190,26 @@ nav{
 	}
 }
 
-	
+.time {
+	font-family: $orbitron !important;
+	padding: 10px 0 0 0;
+	color: $blue;
+}
+
+#action-modal{
+	width: 30% !important;
+
+}
+
+.activity-card{
+	height:400px;
+	max-height:400px;
+    overflow-y:scroll;
+}
+
+.collection-item{
+	&:hover {
+		cursor: pointer;
+		background: #fafafa;
+	}
+}

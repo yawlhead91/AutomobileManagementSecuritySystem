@@ -21,7 +21,21 @@ ActivitySchema = new SimpleSchema({
 	},
 	imagepath: {
 		type: String
+	},
+	isRead: {
+		type: Boolean,
+		defaultValue: false,
+		optional: true,
+	},
+	status: {
+		type: Boolean,
+		defaultValue: false,
+		optional: true,
+	},
+	formatedAddress: {
+		type: String,
 	}
+
 });
 
 Activity.allow({
@@ -40,16 +54,18 @@ Activity.allow({
 	fetch: ['owner']
 });
 
+
 Meteor.methods({
-	insertActivity: function(userId, long, lat, image){
+	insertActivity: function(userId, long, lat, image, fa){
 		Activity.insert({
 			date: new Date(),
 			userId: userId,
 			long: long,
 			lat: lat,
-			imagepath: image
-		})
-	}
+			imagepath: image,
+			formatedAddress: fa
+		});
+	},
 });
 
 

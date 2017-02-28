@@ -6,4 +6,16 @@
 	</div>
 	{{>Map}}
 </div>
+<div id="action-modal" class="modal">
+    <div class="modal-content modal-activity">
+      <h4 class="center">Activity</h4>
+      <p class= "center">You Car Is Currently Active.</p>
+      <img src="/Images/faceone.jpg" alt="Face" style="width:304px; margin-left: auto; margin-right: auto;">
+      <h5 class="time">{{getCountdown}}</h5>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Disable</a>
+      <a href="#!" id="enabled-btn" class=" modal-action modal-close waves-effect waves-green btn-flat">Enable</a>
+    </div>
+  </div>
 </template>

@@ -54,3 +54,9 @@ useraccounts:flow-routing
 dburles:google-maps
 rafaelhdr:google-charts
 nimble:restivus
+cfs:standard-packages
+cfs:filesystem
+matb33:collection-hooks
+http
+flyandi:reactive-countdown
+aldeed:geocoder
