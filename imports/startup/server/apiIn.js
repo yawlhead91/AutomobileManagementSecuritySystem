@@ -71,10 +71,7 @@ Meteor.startup(() => {
                     });
 
                     if(data){
-                        return {
-                            status: data.status,
-                            message: "POST Successfull"
-                        }
+                        return data.status;
                     }else{
                         return {
                             status: "fail",

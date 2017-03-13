@@ -11,7 +11,7 @@ if (Meteor.isServer) {
             userId: userId
         });
     }, {
-        url: "localhost:3000/:0",
-        httpMethod: "post"
+        url: "http://13.92.135.184/:0",
+        httpMethod: "get"
     });
 }
