@@ -1,17 +1,23 @@
 import {Activity} from '../activity.js';
+import {Gps} from '../gps.js';
+import {SecurityStatus} from '../securityStatus.js';
 
 if (Meteor.isServer) {
-    Meteor.publish('activity', function() {
+    Meteor.publish('activity', function(userId) {
         return Activity.find({
             userId: this.userId
         });
     });
-    Meteor.publish('ddpActivity', function(userId) {
-        return Activity.find({
-            userId: userId
+
+    Meteor.publish('gps', function(userId) {
+        return Gps.find({
+            userId: this.userId
         });
-    }, {
-        url: "http://13.92.135.184/:0",
-        httpMethod: "get"
+    });
+
+    Meteor.publish('secStat', function(userId) {
+        return SecurityStatus.find({
+            userId: this.userId
+        });
     });
 }

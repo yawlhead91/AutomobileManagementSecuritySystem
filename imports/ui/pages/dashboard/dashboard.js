@@ -13,7 +13,7 @@ Template.DashboardMain.onCreated(function(){
 	$('.modal').leanModal();
 	var self = this;
     self.autorun(() => {
-        self.subscribe('activity');
+        self.subscribe('activity', this.userId);
     });
 });
 

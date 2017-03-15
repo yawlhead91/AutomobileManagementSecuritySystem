@@ -1,13 +1,9 @@
 import { Mongo } from 'meteor/mongo';
 import { check } from 'meteor/check';
 
-export const Activity = new Mongo.Collection('activity');
+export const Gps = new Mongo.Collection('gps');
 
-ActivitySchema = new SimpleSchema({
-	date: {
-		type: String,
-		label: "date",
-	},
+gpsSchema = new SimpleSchema({
 	userId: {
 		type: String,
 	},
@@ -22,23 +18,9 @@ ActivitySchema = new SimpleSchema({
 	gpsId: {
 		type: String
 	},
-	isRead: {
-		type: Boolean,
-		defaultValue: false,
-		optional: true,
-	},
-	status: {
-		type: Boolean,
-		defaultValue: false,
-		optional: true,
-	},
-	formatedAddress: {
-		type: String,
-	}
-
 });
 
-Activity.allow({
+Gps.allow({
 	insert: function (userId, doc) {
 		// the user must be logged in, and the document must be owned by the user
 		return !!userId;
@@ -56,17 +38,15 @@ Activity.allow({
 
 
 Meteor.methods({
-	insertActivity: function(userId, long, lat, gpsId, fa){
+	insertGps: function(userId, long, lat, gpsId){
 		Activity.insert({
-			date: new Date(),
 			userId: userId,
 			long: long,
 			lat: lat,
 			gpsId: gpsId,
-			formatedAddress: fa
 		});
 	},
 });
 
 
-Activity.attachSchema( ActivitySchema );
+Gps.attachSchema( gpsSchema );
