@@ -34,9 +34,10 @@ Meteor.startup(() => {
                 var id = this.request.headers['x-user-id'];
                 var lat = parseFloat(this.request.headers['lat']);
                 var long = parseFloat(this.request.headers['long']);
-                var gpsId = this.request.headers['gpsId'];
+                var gpsId = this.request.headers['gps'];
 
-                
+                console.log(this.request.headers);
+                console.log(gpsId);
 
                 if (id && long && lat && gpsId) {
                     var fa = geocodeLatLng(lat, long);
@@ -50,7 +51,7 @@ Meteor.startup(() => {
                         statusCode: 400,
                         body: {
                             status: "fail",
-                            message: "Unable to add data"
+                            message: "Unable to add data "
                         }
                     }
                 }
@@ -65,7 +66,7 @@ Meteor.startup(() => {
                 var id = this.request.headers['x-user-id'];
                 var lat = parseFloat(this.request.headers['lat']);
                 var long = parseFloat(this.request.headers['long']);
-                var gpsId = this.request.headers['gpsId'];
+                var gpsId = this.request.headers['gps'];
                 
 
                 if (id && long && lat && gpsId) {

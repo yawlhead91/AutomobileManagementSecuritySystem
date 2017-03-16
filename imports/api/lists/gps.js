@@ -39,7 +39,7 @@ Gps.allow({
 
 Meteor.methods({
 	insertGps: function(userId, long, lat, gpsId){
-		Activity.insert({
+		Gps.insert({
 			userId: userId,
 			long: long,
 			lat: lat,
